@@ -1,0 +1,39 @@
+\section{Question 4}
+\horz
+ Let $f:\mathbb{R}\to\mathbb{C}$ be such that $\int_{\mathbb{R}}|f(x)|dx<\infty$ and $g\in C_c^\infty(\mathbb{R})$. Prove that the function $f*g$ defined by $f*g(x):=\int_{\mathbb{R}}f(y)g(x-y)dy$ is a well-defined smooth function.
+\begin{itemize}
+\item[(a)] Is $f*g$ will also be compactly supported? What if $f\in C_c^\infty(\mathbb R)$? 
+\item[(b)] Prove that $\|f*g\|_p\leq \|f\|_1\|g\|_p$ for all $1\leq p\leq \infty.$
+\end{itemize}
+\horz
+
+\begin{proof}[Solution]
+\begin{enumerate}[label=(\alph*)]
+\item  If $f \in L^{1} \left( \R \right)$ and $g \in C_{c} ^{\infty} \left( \R \right)$ then it can be shown that $f * g$ may not be compactly supported.
+
+On the other hand, we show that if both $f$ and $g$ are both compactly supported then $f * g $ must be compactly supported. In fact, we show that if $\supp \left( f * g \right) \subset \overline{\supp f + \supp g}$. \footnote{The proof of the claim of $\supp \left( f *g \right) \subset \overline{\supp f + \supp g}$ of the solution was borrowed from \cite{MR2759829}.}.
+
+First, we claim that for a fixed $x\in R$, $f\left( x-y \right) g\left( y \right) \ne 0$ implies that $y \in \left( x- \supp f \right) \cap \supp g$. To see this, let $y\in \R$ be such that $f\left( x-y \right) g(y) \ne 0$. Consequently, $f\left( x-y \right) \ne 0$ and $g\left( y \right) \ne 0$. If $g\left( y \right) \ne 0$ then $y \in \supp g$ and if $f\left( x-y \right) \ne 0$ then $x-y \in \supp f$, that is, $y \in x - \supp f$. Let $C_{x} = \left( x- \supp f \right) \cap \supp g$ for each $x\in \R$. 
+
+Now, note that for a fixed $x\in \R$, we have that
+\begin{align*}
+\left( f * g \right) \left( x \right) &= \int_{\R} f\left( x-y \right) g(y) \, dy \\
+&= \int_{C_{x}} f\left( x-y \right) g(y) \, dy + \cancelto{0}{\int_{C_{x}^{c}} f\left( x-y \right) g(y) \, dy} & (\text{by the previous paragraph})\\
+&= \int_{\left( x- \supp f \right) \cap \supp g} f\left( x-y \right) g(y) \, dy.
+\end{align*}
+
+We claim that if $x \not \in \supp f + \supp g$ then $\left( x - \supp f \right) \cap \supp g = \emptyset$. This is to see for if $y \in \supp \left( x - \supp f \right) \cap \supp g$ then $x-y \in \supp f$ and $y \in \supp g$ which implies $x \in \supp f + \supp g$. 
+Consequently, if $x \not \in \supp f + \supp g$ then we have that $\left( f * g \right)(x) = 0$. Hence, we have that $(f * g) = 0$ a.e. on $\left( \supp f + \supp g \right)^{c}$. Hence, $f * g = 0$ a.e. in particular on the interior of $\left( \supp f + \supp g \right)^{c}$ which equals $\overline{\supp f + \supp g}$.
+
+Since sum of two compact sets is compact, we are done.\footnote{because sum is jointly continuous and product of compact sets is compact.}.
+\item One can prove this with the weaker hypothesis that $g \in L^{p} \left( \R \right)$ in the following way:
+\begin{align*}
+\norm{f * g}_{p} &= \norm{\int_{\R} f(y) g\left( \cdot - y \right) \, dy}_{p} \\
+&\le \int_{\R} \norm{f\left( y \right) g\left( \cdot - y \right)}_{p} \, dy & \text{(See question 1)} \\
+&= \int_{\R} \abs{f(y)} \norm{g\left( \cdot - y \right)}_{p} \, dy \\
+&= \int_{\R} \abs{f(y)} \norm{g}_{p} \, dy & \text{(translation invariance)} \\
+&= \norm{f}_{1} \norm{g}_{p}.
+\end{align*}
+\end{enumerate}
+
+\end{proof}

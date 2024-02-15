@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Lecture Note Question 1}{2}{section.1}%
+\contentsline {section}{\numberline {2}Lecture Note Question 2}{3}{section.2}%
+\contentsline {section}{\numberline {3}Lecture Note Question 3}{5}{section.3}%
+\contentsline {section}{\numberline {4}Lecture Note Question 4}{6}{section.4}%
+\contentsline {section}{\numberline {5}Lecture Note Question 5}{7}{section.5}%
+\contentsline {section}{\numberline {6}Lecture Note Question 6}{9}{section.6}%
+\contentsline {section}{\numberline {7}Assignment Question 2}{10}{section.7}%
+\contentsline {section}{\numberline {8}Assignment Question 3}{12}{section.8}%
+\contentsline {section}{\numberline {9}Assignment Question 4}{14}{section.9}%

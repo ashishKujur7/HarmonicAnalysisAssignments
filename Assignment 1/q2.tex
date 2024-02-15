@@ -1,0 +1,31 @@
+\section{Assignment Question 2}
+\horz
+Let $D_{N}$ be the Dirichlet kernel. Prove that
+\begin{equation*}
+\frac{4}{\pi^{2}} \sum_{k=1}^{N} \frac{1}{k} \le \norm{D_{N}}_{L^{1} (\T)} \le 2 + \frac{\pi}{4} + \frac{4}{\pi ^{2}} \sum_{k=1}^{N} \frac{1}{k}.
+\end{equation*}
+\horz
+
+\begin{proof}[Solution]
+First, we prove the lower bound estimate for $\norm{D_{N}}_{L^{1}\left( \T \right)}$. We have already shown that
+\begin{equation*}
+D_{N} \left( t \right) = \frac{\sin \left(\left( 2N+1 \right)\pi t\right)}{\sin \left( \pi t \right)}.
+\end{equation*}
+To estimate the lower bound, consider the following:
+\begin{align*}
+\norm{D_{N}}_{L^{1} \left( \T \right)} &= \int_{0}^{1} \abs{ \frac{\sin \left( \left( 2N+1 \right)\pi t \right)}{\sin \left( \pi t \right)}} \, dt \\
+&= 2 \int_{0}^{\frac{1}{2}}  \abs{ \frac{\sin \left( \left( 2N+1 \right)\pi t \right)}{\sin \left( \pi t \right)}} \, dt & \text{(symmetric about } x=1/2 ) \\
+&= \frac{2}{\pi} \int_{0}^{\frac{\pi}{2}} \abs{\frac{\sin \left( \left( 2N +1 \right)t \right)}{\sin t}} \, dt & \text{(substitute } u=\pi t ) \\
+& \ge   \frac{2}{\pi} \int_{0}^{\frac{\pi}{2}} \abs{\frac{\sin \left( \left( 2N +1 \right)t \right)}{t}} \, dt  \\
+& =   \frac{2\left( 2N+1 \right)}{\pi} \int_{0}^{\frac{(2N+1)\pi}{2}} \abs{\frac{\sin \left( t \right)}{t}} \, dt   & \left(\text{substitute }u=( 2N+1 )t \right)  \\
+&\ge \frac{2}{\pi} \int_{0}^{\frac{(2N+1)\pi}{2}} \abs{\frac{\sin \left( t \right)}{t}} \, dt   \\
+&= \frac{2}{\pi} \left( \sum_{k=0}^{n-1} \int_{k\pi}^{\left( k+1 \right)\pi} \frac{\abs{\sin t}}{t} \, dt + \int_{(k+1)\pi}^{\frac{\left( 2N+1 \right)}{2}} \frac{\abs{\sin t}}{t} \, dt \right) \\
+&\ge \frac{2}{\pi} \sum_{k=0}^{n-1} \int_{k\pi}^{\left( k+1 \right)\pi} \frac{\abs{\sin t}}{t} \, dt  \\
+&\ge\frac{2}{\pi} \sum_{k=0}^{n-1} \int_{0}^{\pi} \frac{\sin t}{ t+k\pi} \, dt & \left( \text{substitute } u=t+k\pi \right) \\
+&\ge\frac{2}{\pi} \sum_{k=0}^{n-1} \int_{0}^{\pi} \frac{\sin t}{ \pi+k\pi} \, dt  \\
+&= \frac{2}{\pi ^{2}} \sum_{k=0}^{n-1} \frac{1}{k+1} \int_{0}^{\pi} \sin t \, dt \\
+&= \frac{4}{\pi ^{2}} \sum_{k=1}^{n} \frac{1}{k}.
+\end{align*}
+
+To estimate the upper bound, consider the following:
+\end{proof}

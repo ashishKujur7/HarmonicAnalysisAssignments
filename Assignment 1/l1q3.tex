@@ -1,0 +1,42 @@
+\section{Lecture Note Question 3}
+\horz
+\begin{enumerate}
+\item Compute $\hat{f} \left( k \right)$ when 
+\begin{equation*}
+f(e^{2\pi i t}) = \sum_{k=-N}^{N} a_{k} e^{2\pi i k t}
+\end{equation*}
+\item Compute $\hat{f} \left( k \right)$ when 
+\begin{equation*}
+f(e^{2\pi i t}) = 
+\begin{cases}
+1 & \text{for } a<t<b \\
+0 & \text{otherwise}
+\end{cases}
+\end{equation*}
+where $[a,b] \subset [0,1)$.
+\item Show that $\lim_{n\to \infty} \abs{\hat{f} (n)} = 0$ in the above example. 
+
+\end{enumerate}
+
+\horz
+
+\begin{proof}[Solution]
+\begin{enumerate}
+\item A quick computation shows that 
+\begin{equation*}
+\hat{f} (n) = \begin{cases}
+a_{k} & \text{for } -N \le k \le N \\
+0 & \text{otherwise}.
+\end{cases}
+\end{equation*}
+\item Again a simple computation shows that
+\begin{equation*}
+\hat{f} (n) = \frac{i}{2\pi n} \left( e^{-2\pi inb} - e^{-2\pi i n a} \right)
+\end{equation*}
+\item For the trignometric polynomial, the Fourier coefficients is eventually zero, hence, $\lim_{n\to \infty} \abs{\hat{f} (n)} = 0$. While for the second one, 
+\begin{align*}
+\abs{\hat{f} \left( n \right)} &= \abs{\frac{i}{2\pi n} \left( e^{-2\pi inb} - e^{-2\pi i n a} \right)} \\
+& \le \frac{2}{2\pi n} = \frac{1}{\pi n} \to 0 \text { as } n \to \infty.
+\end{align*}
+\end{enumerate}
+\end{proof}

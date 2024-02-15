@@ -1,0 +1,16 @@
+\section{Lecture Note Question 1}
+\horz
+What is the measure of $\left\{ z\in \T : z=e^{2\pi i \theta}, \frac{1}{2} \le \theta < 1 \right\}$?
+\horz
+\begin{proof}[Solution]
+Let $e : [0,1) \to \T$ be the measurable map given by 
+\begin{align*}
+e(t)=e^{2\pi i t}
+\end{align*}
+for each $t \in [0,1)$. Let $\lambda$ be the Lebesgue measure on $[0,1)$. Denote the pushforward measure on $\T$ by $\lambda e^{-1}$. Then
+\begin{align*}
+\lambda e^{-1} \left( \left\{ z\in \T : z=e^{2\pi i \theta}, \frac{1}{2} \le \theta < 1 \right\} \right) &= \lambda \left( e^{-1} \left(  \left\{ z\in \T : z=e^{2\pi i \theta}, \frac{1}{2} \le \theta < 1 \right\}\right) \right) \\
+&= \lambda \left( [1/2,1) \right) \\
+&= \frac{1}{2}.
+\end{align*}
+\end{proof}

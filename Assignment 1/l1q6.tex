@@ -1,0 +1,20 @@
+\section{Lecture Note Question 6}
+\horz
+
+Show that for any $0 < \delta < \frac{1}{2}$ there exists $c,d > 0$ such that for any $\abs{t} < \delta$ we have
+\begin{equation*}
+d\abs{\pi t} \le \abs{\sin \left( \pi t \right)} \le c \abs{\pi t}.
+\end{equation*}
+
+\horz
+\begin{proof} [Solution]
+Consider the function $f(t)= \sin \left( \pi t \right)$. Let $0< \delta < \frac{1}{2}$ and let $t \in \R$ with $\abs{t} < \delta$. Suppose that $t\ge 0$. Then there is some $t_{0} \in [0, t]$ such that $\sin \left( \pi t \right) = \cos \left( \pi t_{0} \right) \pi t$.
+
+Since $\cos$ is decreasing on the interval $[0, \pi /2 ]$, we have that 
+\begin{equation*}
+\sin \left( \pi t \right) \ge \cos \left( \pi \delta \right) \pi t \leadsto \abs{\sin \left( \pi t \right)} \ge \abs{\cos \left( \pi \delta \right)} \abs{\pi t}.
+\end{equation*}
+If $t<0$, we use what we have proved immediately for $-t$ and the lower bound is established with $d=\abs{\cos \left( \pi \delta \right)}$. 
+
+The upper bound is established immediately with $c=1$.
+\end{proof}

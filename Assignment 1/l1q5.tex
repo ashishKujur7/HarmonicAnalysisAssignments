@@ -1,0 +1,45 @@
+\section{Lecture Note Question 5}
+\horz
+ We define the Dirichlet kernel $D_{N}$ for each $N\in \N$ in the following way:
+\begin{align*}
+D_{N} (t) = \sum_{k=-N}^{N} e^{2\pi i k t}
+\end{align*}
+Show the following:
+\begin{enumerate}
+\item $D_{N} (t) = \frac{\sin \left( \pi \left( 2N + 1 \right) t \right)}{\sin \left( \pi t \right)} \qquad \left( t\ne 0 \right)$.
+\item $\int_{0}^{1} D_{N} (t) dt = 1$
+\item $\abs{D_{N} (t)} \le \frac{1}{ \sin \left( \pi \delta \right)}$ for $0 < \delta \le \abs{t} < \frac{1}{2}$.
+\end{enumerate}
+\horz
+\begin{proof}[Solution]
+\begin{enumerate}
+\item Note that $D_{N} (t)$ is real number for each $t \ne 0$ because 
+$\sum_{k=-N}^{N} e^{2\pi i k t}  = 1 + \sum_{k=1}^{N}\left( e^{2\pi i k t} + \overline{e^{2 \pi i k t}} \right) = \Re \left( 1+ 2 \sum_{k=1}^{N} e^{2\pi i k t} \right)$.
+
+Hence, we have that
+\begin{align*}
+\sum_{k=-N}^{N} e^{2\pi i k t} &= \left( \frac{e^{-2\pi iN t} \left( 1 - e^{2\pi i \left( 2N+1 \right) t} \right)}{1- e^{2\pi i t}} \right) & \text{(using the geometric formula)} \\
+&= \Re  \left( \frac{e^{-2\pi iN t} \left( 1 - e^{2\pi i \left( 2N+1 \right) t} \right)}{1- e^{2\pi i t}} \right) & \left(\text{as justified} \right)\\
+&= \Re \left(  \frac{e^{-2\pi iN t} e^{\pi i \left( 2N+1 \right)t} \left( e^{-\pi i \left( 2N+1 \right)t} - e^{\pi i \left( 2N+1 \right) t} \right)}{e^{\pi i t}(e^{-\pi i t}- e^{\pi i t})}  \right) \\
+&= \Re \left( \frac{ e^{-\pi i \left( 2N+1 \right)t} - e^{\pi i \left( 2N+1 \right) t} }{e^{-\pi i t} - e^{\pi i t}} \right) \\
+&= \frac{\sin \left( \pi \left( 2N+1 \right)t \right)}{\sin \left( \pi t \right)}
+\end{align*}
+
+\item Note \begin{align*}
+\int_{0}^{1}\sum_{k=-N}^{N} e^{2\pi i k t}  dt 
+&= \int_{0}^{1} 1 + \sum_{k=1}^{N}\left( e^{2\pi i k t} + \overline{e^{2 \pi i k t}} \right) dt \\
+&= \int_{0}^{1} \Re \left( 1+ 2 \sum_{k=1}^{N} e^{2\pi i k t} \right) dt \\
+&=  \Re \left( 1+ 2 \sum_{k=1}^{N} \int_{0}^{1} e^{2\pi i k t} dt \right)  \\
+&=  \Re \left( 1+ \frac{2}{2\pi i} \sum_{k=1}^{N} \int_{C_{k}} z^{k-1} dz \right)  & \left( C_{k} \text{ is circle of radius }2\pi k \right) \\
+&= 1
+\end{align*}
+\item Let $0 < \delta \le \abs{t} < \frac{1}{2}$. Since $\sin$ is an increasing function on $[0, \frac{\pi}{2}]$, we have that 
+\begin{equation*}
+\frac{1}{\sin \left( \pi\abs{t}\right) } \le \frac{1}{\sin \left( \pi \delta \right)}
+\end{equation*}
+and consequently, we have that 
+\begin{align*}
+\abs{D_{N} \left( t \right)} \le \frac{1}{\abs{\sin \left( \pi t \right)}} = \frac{1}{\sin \left( \pi \abs{t} \right)} \le \frac{1}{\sin \left( \pi \delta \right)}.
+\end{align*}
+\end{enumerate}
+\end{proof}

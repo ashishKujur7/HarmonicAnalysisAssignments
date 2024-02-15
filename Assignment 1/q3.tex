@@ -1,0 +1,49 @@
+\section{Assignment Question 3}
+\horz
+Let $f \in L^{1} \left( \T \right)$ and $p$ be a trignometric polynomial. Define
+\begin{equation*}
+f * p (x) = \int_{0}^{1} f\left( x-t \right) p(t) dt
+\end{equation*}
+for each $x \in [0,1)$.
+Show that $f * p \in C\left( \T \right)$.
+Prove that $(f* p) \left( x \right) = \sum \hat{p} \left( m \right) \hat{f}\left( m \right) e^{2\pi i m x}$.
+\horz
+
+\begin{proof}[Solution]
+First, we make use of a fact that convolution is commutative, that is, if $f,g \in L^{1} \left( \T \right)$ then $f * g  = g * f$.\footnote{A proof of this can be found in Katznelson, An Introduction To Harmonic Analysis, Page 5}.
+
+Let $f \in L^{1} \left( \T \right)$ and $p$ be a trignometric polynomial. Thus, we have that $f * p = p *f$. Also, for each $n\in \Z$, we denote $e^{n} : [0,1) \to \C$ given by
+\begin{equation*}
+e^{n} \left( t \right) = \exp \left( 2\pi i n t \right)
+\end{equation*}
+for each $t\in [0,1)$.
+
+Let $p$ be a trignometric polynomial. Now, we show that $f * p$ is continuous on $\T$. It is enough to show that $p * f$ is continuous in the view that $f * p = p * f$. To this end, let $\left( x_{n} \right) $ be any sequence in $[0,1)$ to $x \in [0,1)$. Then note that:
+\begin{align*}
+\lim_{n\to \infty} (p * f)\left( x_{n} \right) &= \lim_{n\to \infty} \int_{0}^{1} p \left( x_{n} - t \right) f\left( t \right) dt \\
+&\stackrel{(\star)}{=} \int_{0}^{1} \lim_{n\to \infty} p\left( x_{n} -t \right) f\left( t \right) dt \\
+&= \int_{0}^{1} p\left( x-t \right) f(t) & \text{(trignometric polynomials are continuous)} \\
+&= (p*f) \left( x \right).
+\end{align*}
+The aforementioned series of equality will show that $p*f$ is continuous at $x$ provided we justify the equality at the step $\left( \star \right)$. To justify the equality $\left( \star \right)$, we appeal to Dominated Convergence Theorem. For each $n\in \N$, define
+\begin{equation*}
+F_{n} (t) = p\left( x_{n} - t \right) f(t)
+\end{equation*}
+for each $t \in [0,1)$. Note since $p$ is continuous, we have that $\lim_{n \to \infty} F_{n} (t) = p(x-t)f(t)$ at each $t \in [0,1)$. Also note that 
+\begin{equation*}
+\abs{F_{n} \left( t \right)} = \abs{p\left( x-t \right) f(t)} \le \norm{p}_{\infty} \abs{f(t)}
+\end{equation*}
+for each $t \in \left[ 0,1 \right)$. Since $\norm{p}_{\infty} f \in L^{1} \left( \T \right)$, the equality at $\left( \star \right)$ makes sense via Dominated Convergence Theorem.
+
+We now show that  $(f* p) \left( x \right) = \sum \hat{p} \left( m \right) \hat{f}\left( m \right) e^{2\pi i m x}$. To this end, consider the following:
+\begin{align*}
+\left( f*p \right) \left( x \right) &= \int_{0}^{1} f\left( x-t \right) p\left( t \right) dt \\
+&= \int_{0}^{1} f\left( x-t \right) \left( \sum_{m} \hat{p}\left( m \right) e^{2\pi i m t}\right) dt & \text{(as p is trig. polynomial and sum is a finite sum)} \\
+&= \sum_{m} \hat{p} \left( m \right)\left( \int_{0}^{1} f\left( x-t \right) e^{2\pi i m t} dt \right) \\
+&= \sum_{m} \hat{p} \left( m \right) \left( f * e^{m} \right) (x) \\
+&= \sum_{m} \hat{p} \left( m \right) (e^{m} * f)(x) \\
+&= \sum_{m} \hat{p}\left( m \right) \int_{0}^{1} e^{2\pi i m \left( x-t \right)} f\left( x \right) dt \\
+&= \sum_{m} \hat{p} \left( m \right) \hat{f}\left( m \right) e^{2\pi i m x}.
+\end{align*}
+\end{proof}
+

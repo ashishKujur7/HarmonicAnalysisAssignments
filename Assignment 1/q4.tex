@@ -1,0 +1,16 @@
+\section{Assignment Question 4}
+\horz
+Suppose that $f(t):=\sum_{k=-N}^{N} a_{k} e^{2\pi i k t}$. Show that $\sum_{k=-N}^{N} \abs{\hat{f}\left( k \right)}^{2} = \norm{f}_{L^{2} \left( \T \right)}^{2}$.
+\horz
+\begin{proof}[Solution]
+Let us denote $F_{N} = \left\{ 0, \pm 1, \ldots , \pm N \right\}$.
+Let $f\left( t \right) = \sum_{k=-N}^{N} a_{k} e^{2\pi i k t}$. We have already seen that $\hat{f} \left( k \right) = a_{k}$ for each $k \in F_{N}$. Thus, $f\left( t \right) = \sum_{k=-N}^{N} \hat{f}\left( k \right)e^{2\pi i kt}$. Now,
+\begin{align*}
+{\norm{f}_{L^{2}}^{2} \left( \T \right)} &= \ip{f,f} \\
+&= \ip{\sum_{k \in F_{N}}\hat{f} \left( k \right) e^{2\pi i kt}, \sum_{j \in F_{N}}\hat{f} \left( j \right) e^{2\pi i jt}} \\
+&= \sum_{k,j \in F_{N}} \hat{f}\left( k \right) \overline{\hat{f} \left( j \right)} \ip{e^{2\pi i k t}, e^{2\pi i j t}} \\
+&= \sum_{k,j \in F_{N}} \hat{f} \left( k \right) \overline{\hat{f} \left( j \right)} \delta_{kj} \\
+&= \sum_{k \in F_{N}} \abs{\hat{f} \left( k \right)}^{2}
+\end{align*}
+which completes the proof.
+\end{proof}

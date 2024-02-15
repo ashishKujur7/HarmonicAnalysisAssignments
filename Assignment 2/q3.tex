@@ -1,0 +1,46 @@
+\section{Question 3}
+\horz
+Let $f\in L_1(\mathbb R).$ Define $\hat{f}(\zeta)=\int_{\mathbb R}f(x)e^{-2\pi ix\zeta}dx.$ Show that if $\int_{\mathbb{R}}|x||f(x)|dx<\infty,$ then we must have that $\hat{f}$ is continuously differentiable. Find a condition on $f$ for which $\hat{f}$ will be a smooth function.
+\horz
+\begin{proof}[Solution]
+We need to show that the function $\hat{f}$ is continuously differentiable. Fix a point $\zeta_{0} \in \R$. Consider the sequence of function $F_n : \R \to \C$ given by
+\begin{equation*}
+F_{n} \left( x \right) = f\left( x \right)e^{-2\pi i x \zeta_{0}}\left( \frac{e^{\left( -2\pi i \frac{x}{n} \right)} - 1}{1/n} \right)
+\end{equation*}
+for each $x \in \R$.
+It is easy to see that $F_{n} \left( x \right)$ converges pointwise everywhere to $-2\pi i x f(x)e^{-2\pi i x \zeta_{0}}$ because $\lim_{n\to \infty} \frac{e^{\left( -2\pi i \frac{x}{n} \right)} - 1}{1/n} = 0$ for each  $x \in \R$. 
+Also, we claim that $\abs{F_n (x)} \le 2\pi \abs{x f(x)}$. To show this, we make use of the fact that $\abs{e^{ix} -1 } \le \abs{x}$ for each $x\in \R$. \footnote{One can show this by using that fact that $\abs{\sin x}\le \abs{x}$ for each  $x\in \R$ as follows:
+\begin{align*}
+\abs{e^{ix} - 1} &= \abs{\cos x + i \sin x -1} \\
+&= \abs{1- \cos x + i \sin x} \\
+&= \abs{2 \sin ^{2} \left( \frac{x}{2} \right) + 2i \sin \left( \frac{x}{2} \right) \cos \left( \frac{x}{2} \right)} \\
+&= \abs{2i \sin \left( \frac{x}{2} \right) e^{\frac{ix}{2}}} \\
+&\le 2 \frac{\abs{x}}{2} = \abs{x}.
+\end{align*}}
+To this end, let $x\in \R$ and consider the following:
+\begin{align*}
+\abs{F_{n}\left( x \right)} &= \abs{f\left( x \right)e^{-2\pi i x \zeta_{0}}\left( \frac{e^{\left( -2\pi i \frac{x}{n} \right)} - 1}{1/n} \right)} \\
+&\le \abs{f(x)} \frac{\abs{-2\pi i \frac{x}{n}}}{1/n} \\
+&= 2\pi \abs{xf(x)} 
+\end{align*}
+
+We went through the trouble of defining the sequence of function $\left( F_{n} \right)_{n\in \N}$ for the reason that:
+\begin{align*}
+\frac{d\hat{f}}{d\zeta} \left( \zeta_{0} \right) &= \lim_{n \to \infty} \frac{\hat{f} \left( \zeta_{0} + \frac{1}{n} \right) - \hat{f} \left( \zeta_{0} \right)}{\frac{1}{n}} \\
+&= \lim_{n\to \infty} \int_{\R} F_{n} \left( x \right) \, dx \\
+&= \int_{\R} \lim_{n\to \infty} F_{n} \left( x \right) \, dx & \text{(by DCT)} \\
+&= \int_{\R}  -2\pi i x f(x)e^{-2\pi i x \zeta_{0}} \, dx \\
+&= -2\pi i \widehat{\left( x f \right)} \left( \zeta_{0} \right).
+\end{align*}
+
+This shows that $\hat{f}$ is differentiable and $\frac{d\hat{f}}{d\zeta} \left( \zeta \right) = -2\pi i \widehat{\left( xf \right)} \left( \zeta \right)$. To see that this is continuous, let $\zeta_{0} \in R$ and let $\left( h_{n} \right)$ be any sequence converging to $0$ and we again apply DCT in the following way:
+\begin{align*}
+\lim_{n \to \infty} \widehat{xf} \left( \zeta_{0} + h_{n} \right) &= \lim_{n\to \infty} \int_{-\infty}^{\infty} x f\left( x \right) e^{-2\pi i \left(\zeta_{0} + h_{n} \right)} \\
+&\stackrel{\text{(DCT)}} {=}  \int_{-\infty}^{\infty}  \lim_{n\to \infty}x f\left( x \right) e^{-2\pi i \left(\zeta_{0} + h_{n} \right)} \\
+&= \int_{-\infty}^{\infty}  x f\left( x \right) e^{-2\pi i \zeta_{0}} \\
+&= \widehat{xf} \left( \zeta_{0} \right)
+\end{align*}
+This would complete the proof provided we justify the step at DCT step. That is easily justified by the fact that $x \mapsto x f(x)$ is in $L^{1} \left( \R \right)$.
+
+Finally, we showed in class that if $f\in \calS \left( \R \right)$, that is, the Schwartz class of $\R$ then $\hat{f}$ must be smooth.
+\end{proof}

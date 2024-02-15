@@ -1,0 +1,98 @@
+\section{Question 1}
+\horz
+Suppose that ($X$, $\mathcal{M}$, $\mu$) and ($Y$, $\mathcal{N}$, $\nu$) are $\sigma$-finite measure spaces, and let $f$ be a product measurable function on $X \times Y.$ If $f \ge 0$ and $1 \le p < \infty$, then
+\begin{equation}
+ \left[\int_X \left(\int_Y f(x,y) d\nu(y) \right)^pd\mu(x)\right]^\frac{1}{p} \le \int_Y \left[\int_X f(x,y)^p d\mu(x)\right]^\frac{1}{p}d\nu(y)
+ \label{eqn:ntp}
+ \end{equation}
+ If $1 \le p \le \infty$, $f(\cdot, y) \in L^p(\mu)$ for a.e. $y$, and the function $y \to ||f(\cdot, y)||_p$ is in $L^1(\nu)$, then $f(x, \cdot) \in L^1(\nu)$ for a.e. $x$, the function $x \to \int f(x,y) d\nu(y)$ is in $L^p(\mu)$, and $$\left|\left|\int f(\cdot, y)d\nu(y)\right|\right|_p \le \int||f(\cdot, y)||_pd\nu(y).$$  
+
+To prove the above you can do it by the following steps.
+\begin{itemize}
+\item[(a)] Let $1\leq p<\infty$ and $g\in L_p(X, \mathcal{M}, \mu)$. Then $\|g\|_p=\{\int_{X}gh:\|h\|_q=1\}$ where $\frac{1}{p}+\frac{1}{q}=1.$ (Hint: Use Hölder's inequality and then consider the function $h(x)=|g(x)|^{q-1}\frac{\operatorname{sgn} \ g(x)}{\|g\|_q^{q-1}}$ where $\operatorname{sgn}\ g(x):=\frac{g(x)}{|g(x)|}$ when $g(x)\neq 0$ and $\operatorname{sgn} \ g(x)=0$ otherwise.)
+\item[(b)] For $1<p<\infty,$ use (a) and Fubini's theorem to prove 1.
+\end{itemize}
+\horz
+
+\begin{proof}[Solution]
+
+To prove this question, we use the following result due to Tonelli:
+
+\begin{proposition}[Tonelli]
+Let $\left( X, \scrA, \mu \right)$ and $\left( Y, \scrB , \nu \right)$ be $\sigma$-finite measure spaces, and let $f: X \times Y \to [0, + \infty]$ be $\scrA \times \scrB$-measurable. Then 
+\begin{enumerate}[label=(\alph*)]
+\item the function $x \mapsto \int_{Y} f\left( x,y \right) d\nu \left( y \right)$ is $\scrA$-measurable and the function $y \mapsto \int_{X} f\left( x,y \right) d\mu \left( x \right)$ is $\scrB$-measurable, and 
+\item $f$ satisfies
+\begin{equation*}
+\int_{X\times Y} f d\left( \mu \times \nu  \right) = \int_{X} \left( \int_{Y} f\left( x,y \right) d\nu \left( y \right) \right)d\mu \left( x \right) = \int_{Y} \left( \int_{X} f\left( x,y \right) d\mu \left( x \right) \right) d\nu \left( y \right)
+\end{equation*}
+\end{enumerate}
+\label{thm:tonelli}
+\end{proposition}
+
+The statement and proof of the above proposition can be found in \cite{MR3098996} in Chapter 5, Section 2.
+
+Also, we appeal to the following result which can be found in Theorem 6.16. in  \cite{MR0344043} and also in the proof of duality of $L^{p}$ in Proposition 3.5.5. in \cite{MR3098996}.
+
+\begin{theorem}
+Suppose $1 \le p <\infty$, $\mu$ is a $\sigma$-finite positive measure on $X$ and $\Phi$ is a bounded linear functional on $L^{p} \left( \mu \right)$. Then there is a unique $g \in L^{q} \left( \mu \right)$ where $q$ is the conjugate exponent of $p$ such that 
+\begin{equation*}
+\Phi \left( f \right) =\int_{X} fg \, d \mu \; \left( f\in L^{p} \left( \mu \right) \right).
+\end{equation*}
+Moreover, if $\Phi$ and $g$ are related as in the previous equaiton then we have
+\begin{equation*}
+\norm{\Phi} = \norm{g}_{q}.
+\end{equation*}
+\label{thm:duality}
+\end{theorem}
+
+We can start the proof now. Let $f$ be a measurable function on $X \times Y$. We first do it for the case where $f\ge 0$. For $p=1$, we are done because then it is Proposition \ref{thm:tonelli} in disguise. So, suppose that $1<p< \infty$. Also, we may assume $\int_{X} \left( \int_{Y} f(x,y)^{p} d\mu (x) \right)^{1/p} d\nu (y) < \infty$ for otherwise the inequality \ref{eqn:ntp} is always true.
+
+
+Now, define $F\left( x \right) = \int_{Y} f(x,y) d\nu \left( y \right)$. By Proposition \ref{thm:tonelli}, $F$ is $\scrM$-measurable.
+
+Now, we define a linear functional $\Phi : L^{q} \left( \mu \right) \to \C$ by the following way:
+\begin{equation*}
+\Phi (g) =\int_{X} gF \; d\mu \left( g \in L^{q} \; \left( \mu \right) \right)
+\end{equation*}
+
+We now show that $\Phi$ is bounded linear functional. To this end, let $g \in L^{q} \left( \mu \right)$ and consider the following:
+
+\begin{align*}
+\abs{\int_{X} gF d\mu} &\le \int_{Y} \abs{g(x)} \abs{F(x)} d\mu (x)  \\
+&\le \int_{X} \abs{g(x)} \left( \int_{Y} f(x,y) d\nu (y) \right) d\mu (x) \\
+&\le \int_{X} \left( \int_{Y} f(x,y) \abs{g(x)} d\nu (y) \right) d\mu (x) \\
+&\le \int_{X} \left( \int_{Y} f(x,y) \abs{g(x)} d\mu (x) \right) d\nu (y) & \left( \text{Proposition } \ref{thm:tonelli} \right) \\
+&\le \int_{X} \left( \int_{Y} f(x,y)^{p} d\mu (x) \right)^{1/p} \norm{g}_{L^{q} \left( \mu \right)} d\nu (y) & \left( \text{Holder's inquality} \right) \\
+&\le \norm{g}_{L^{q} \left( \mu \right)}  \underbrace{\int_{X} \left( \int_{Y} f(x,y)^{p} d\mu (x) \right)^{1/p} d\nu (y)}_{< \infty \text{ by assumption}}.
+\end{align*}
+
+By Theorem \ref{thm:tonelli}, we have that there is some unique $h \in L^{p} \left( \mu \right)$ such that $\Phi (g) = \int_{X} hg d\mu$ for each $g \in L^{q} \left( \mu \right)$.
+
+By uniqueness, we also have that $F=h$ $\mu$-almost everywhere. Hence $F$ is in $L^{p} \left( \mu \right)$. It follows that $\norm{F}_{L^{p} \left( \mu \right)} =  \left[\int_X \left(\int_Y f(x,y) d\nu(y) \right)^pd\mu(x)\right]^\frac{1}{p} \le \int_{X} \left( \int_{Y} f(x,y)^{p} d\mu (x) \right)^{1/p} d\nu (y)$.
+
+Now, we proceed to complete the second part. Let $f$ be a measurable function on $X \times Y$ such that $f\left( \cdot, y \right) \in L^{p} \left( \mu \right)$ for $\nu$-almost every $y$ and the function $y \mapsto \norm{f\left( \cdot , y \right)}_{p}$ is in $L^{1} \left( \nu \right)$. First, consider the case where $1\le p < \infty$.
+
+Since the function $y \mapsto \norm{f\left( \cdot , y \right)}_{p}$ is in $L^{1} \left( \nu \right)$, we have that
+\begin{equation*}
+\int_{X} \left( \int_{Y} \abs{f(x,y)}^{p} d\mu (x) \right)^{1/p} d\nu (y) < \infty.
+\end{equation*}
+So, we repeat the above proof taking $f$ as $\abs{f}$ (as all the hypothesis are met) and we have that the function $x \to \int f(x,y) d\nu(y)$ is in $L^p(\mu)$ and
+\begin{equation*}
+\left[\int_X \left(\int_Y \abs{f(x,y)} d\nu(y) \right)^pd\mu(x)\right]^\frac{1}{p} \le \int_{X} \left( \int_{Y} \abs{f(x,y)}^{p} d\mu (x) \right)^{1/p} d\nu (y).
+\end{equation*}
+which is the same as
+$$\left|\left|\int f(\cdot, y)d\nu(y)\right|\right|_p \le \int||f(\cdot, y)||_pd\nu(y).$$ 
+To finish the proof for $p=\infty$. Fix $y\in Y$. Hence for $\mu$-almost every $x$,
+\begin{equation*}
+f\left( x,y \right) \le \norm{f\left( \cdot, y \right)}_{\infty}.
+\end{equation*}
+It follows that for each $x \in X$,
+\begin{equation*}
+\int_{Y} f\left( x,y \right) d\nu \left( y \right) \le \int_{Y} \norm{f\left( \cdot, y \right)} d\nu \left( y \right)
+\end{equation*}
+Taking (essential)-supremum over $x\in X$, we have
+\begin{equation*}
+\norm{\int_{Y} f\left( x,y \right) d\nu \left( y \right)}_{\infty} \le \int_{Y} \norm{f\left( \cdot, y \right)}_{\infty} d\nu \left( y \right).
+\end{equation*}
+\end{proof}

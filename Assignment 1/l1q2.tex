@@ -1,0 +1,46 @@
+\section{Lecture Note Question 2}
+\horz
+Show that if $f: \R \to \C$ is Lebesgue measurable and $1$-periodic with $\int_{0}^{1} \abs{f(t)} dt < \infty$ we have
+\begin{align*}
+\int_{a}^{a+1} f(t) dt = \int_{0}^{1} f(t) dt
+\end{align*}
+for each $a\in \R$.
+
+Use this to show that the arc length measure is rotation invariant, that is, for each $f\in L^{1} \left( \T \right)$ and $\zeta \in T$,
+\begin{align*}
+\int_{\T} f_{\zeta} = \int_{\T} f 
+\end{align*}
+where $f_{\zeta} (z) := f(\zeta z)$ for each $z\in \T$. 
+\horz
+
+\begin{proof}[Solution]
+Let $f: \R \to \C$ is Lebesgue measurable and $1$-periodic with $\int_{0}^{1} \abs{f(t)} dt < \infty$. Let $a\in \R$ and k be the unique integer such that $a \le k < a+1$. Consider the following:
+\begin{align*}
+\int_{a}^{a+1} f(t) \, dt &= \int_{a}^{k} f\left( t \right) \, dt + \int_{k}^{a+1} f(t)\, dt \\
+&= \int_{\R} f(t) \chi_{[a,k]}(t) \, dt + \int_{\R} f(t) \chi_{[k,a+1]} (t)\,  dt \\
+&= \int_{\R} f\left( t-(k-1) \right) \chi_{[a,k]}(t-(k-1)) \, dt + \int_{\R} f(t-k) \chi_{[k,a+1]} (t-k)\,  dt & \left( \star \right) \\
+&= \int_{\R} f\left( t-(k-1) \right) \chi_{[a-\left( k-1 \right), 1]}(t) \, dt + \int_{\R} f(t-k) \chi_{[0,a-(k-1)]} (t)\,  dt \\
+&= \int_{a-\left( k-1 \right)}^{1} f\left( t-\left( k-1 \right) \right) dt + \int_{0}^{a-\left( k-1 \right)} f\left( t-k \right) dt \\
+&= \int_{a-\left( k-1 \right)}^{1} f\left( t \right) dt + \int_{0}^{a-\left( k-1 \right)} f\left( t \right) dt & \left( \star \star \right) \\
+&= \int_{0}^{1} f(t) dt.
+\end{align*}
+Note that $\left( \star \right)$ is true because Lebesgue measure is translation invariant and $\left( \star \star \right)$ is true because $f$ is $1$-periodic.
+
+To prove the second part of the question, let $f\in L^{1} \left( \T \right)$. Then $f \circ e : \R \to \C$ meets the hypothesis of the previous statement that we proved. Now let $\zeta \in \T$ then $\zeta = e(\theta)$ for some $\theta \in \R$. Hence we have that 
+
+\begin{align*}
+f_{\zeta} \left( e^{2\pi i t} \right) &=  f\left( \zeta e^{2\pi i t} \right) \\
+&= f \left( e^{2\pi i \theta} e^{2\pi i t} \right) \\
+&= f \left( e^{2\pi i \left( \theta + t \right)} \right) \\
+&= (f \circ e) \left( \theta + t \right).
+\end{align*}
+for each $t\in \R$ and hence we have that 
+\begin{align*}
+\int_{\T} f_{\zeta} &= \int_{0}^{1} (f\circ e) \left( \theta + t \right) \, dt \\
+&=  \int (f \circ e) \left( \theta + t \right) \chi_{[0,1]} \, dt \\
+&= \int \left( f \circ e \right) \left( t \right) \chi _{[-\theta, 1-\theta]} \, dt \\
+&= \int_{-\theta}^{-\theta +1} (f \circ e)(t) \, dt \\
+&= \int_{0}^{1} \left( f \circ e \right) (t) dt \\
+&= \int_{\T} f.
+\end{align*}
+\end{proof}

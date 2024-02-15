@@ -1,0 +1,33 @@
+\section{Question 2}
+\horz
+Let $1\leq p<\infty$ and $f\in L_p(\mathbb T)$. For any $t\in\mathbb R$ define $\tau_tf(x):=f(x-t).$ Prove that $\|\tau_tf-f\|_p\to 0$ as $t\to 0$. Show that the conclusion fails for $p=\infty.$ 
+\horz
+\begin{proof}[Solution]
+Let $1\le p < \infty$ and $f\in L^{p} \left( \T \right)$. To show $\lim_{t\to 0^{+}} \norm{\tau_{t} f - f}_{p} = 0$, let $\varepsilon > 0$ be given. Since $C\left( \T \right)$ is dense in $L^{p} \left( \T \right)$, there is some $g \in C\left( \T \right)$ such that $\norm{f-g}_{p} < \frac{\varepsilon}{3}$.
+
+Since $g \in C\left( \T \right)$, $g$ is uniformly continuous on $\T$. Hence, there is some $\delta >0$ such that 
+\begin{equation*}
+\norm{g\left( \cdot -t \right) - g(t)}_{\infty} < \frac{\varepsilon}{3}
+\end{equation*}
+whenever $\abs{t} < \delta$.
+
+Hence, we have that $\norm{\tau_{t}g - g}_{\infty} < \frac{\varepsilon}{3}$ whenever $\abs{t} < \delta$. Consequently, we have that
+
+\begin{equation*}
+\norm{g\left( \cdot - t \right) - g(t)}_{p}^{p} = \int_{\T} \abs{g(x-t)-g(x)}^p \, dx \le \norm{g\left( \cdot -t \right) - g(t)}_{\infty}^{p} =\norm{\tau_{t}g - g}_{\infty}^{p}
+\end{equation*}
+
+and hence $\norm{\tau_{t} g -g} < \frac{\varepsilon}{3}$ whenever $\abs{t}< \delta$.
+
+
+Also, note that $\norm{\tau_{t} \left( f-g \right)}_{p} = \norm{f-g}_{p}$ because Lebesgue measure is translation invariant.
+
+Hence, we have for $\abs{t} < \delta$, we have that
+\begin{align*}
+\norm{\tau_{t} f - f}_{p} &= \norm{\tau_{t} f - \tau_{t}g + \tau_{t}g - g + g -f}_{p} \\
+&\le \norm{\tau_{t} (f-g)}_{p} + \norm{\tau_{t} g - g}_{p} + \norm{g-f}_{p} \\
+&< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.
+\end{align*}
+
+This completes the proof.
+\end{proof}

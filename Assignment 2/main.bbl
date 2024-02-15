@@ -1,0 +1,119 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{MR2759829}{book}{}
+      \name{author}{1}{}{%
+        {{hash=31e0c25a6fb0297f0536bede27a04cd4}{%
+           family={Brezis},
+           familyi={B\bibinitperiod},
+           given={Haim},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, New York}%
+      }
+      \strng{namehash}{31e0c25a6fb0297f0536bede27a04cd4}
+      \strng{fullhash}{31e0c25a6fb0297f0536bede27a04cd4}
+      \strng{bibnamehash}{31e0c25a6fb0297f0536bede27a04cd4}
+      \strng{authorbibnamehash}{31e0c25a6fb0297f0536bede27a04cd4}
+      \strng{authornamehash}{31e0c25a6fb0297f0536bede27a04cd4}
+      \strng{authorfullhash}{31e0c25a6fb0297f0536bede27a04cd4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-70913-0}
+      \field{series}{Universitext}
+      \field{title}{Functional analysis, {S}obolev spaces and partial differential equations}
+      \field{year}{2011}
+      \field{pages}{xiv+599}
+      \range{pages}{-1}
+    \endentry
+    \entry{MR3098996}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0e18d124f44a7b172b35b12d39c91d04}{%
+           family={Cohn},
+           familyi={C\bibinitperiod},
+           given={Donald\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Birkhäuser/Springer, New York}%
+      }
+      \strng{namehash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{fullhash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{bibnamehash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{authorbibnamehash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{authornamehash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{authorfullhash}{0e18d124f44a7b172b35b12d39c91d04}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Second}
+      \field{isbn}{978-1-4614-6955-1; 978-1-4614-6956-8}
+      \field{series}{Birkhäuser Advanced Texts: Basler Lehrbücher. [Birkhäuser Advanced Texts: Basel Textbooks]}
+      \field{title}{Measure theory}
+      \field{year}{2013}
+      \field{pages}{xxi+457}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1007/978-1-4614-6956-8
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-1-4614-6956-8
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-1-4614-6956-8
+      \endverb
+    \endentry
+    \entry{MR0344043}{book}{}
+      \name{author}{1}{}{%
+        {{hash=33be2fc2739d3493c6d6cc5d56a4c41e}{%
+           family={Rudin},
+           familyi={R\bibinitperiod},
+           given={Walter},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Book Co., New York-Düsseldorf-Johannesburg}%
+      }
+      \strng{namehash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{fullhash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{bibnamehash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{authorbibnamehash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{authornamehash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{authorfullhash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Second}
+      \field{series}{McGraw-Hill Series in Higher Mathematics}
+      \field{title}{Real and complex analysis}
+      \field{year}{1974}
+      \field{pages}{xii+452}
+      \range{pages}{-1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
